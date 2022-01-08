@@ -1,0 +1,100 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Wheather API",
+        "contact": {
+            "email": "mflash123@gmail.com"
+        },
+        "license": {
+            "name": "Apache 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        },
+        "version": "0.1"
+    },
+    "servers": [
+        {
+            "url": "http://127.0.0.1:8000/api/v1",
+            "description": "API Server"
+        }
+    ],
+    "paths": {
+        "/countries": {
+            "get": {
+                "tags": [
+                    "Countries"
+                ],
+                "summary": "Getting countries list",
+                "operationId": "8884078fb0dfb5cd5b899912a191796d",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        },
+        "/countries/{countryId}": {
+            "get": {
+                "tags": [
+                    "Countries"
+                ],
+                "summary": "CountriesApi show",
+                "operationId": "558e4ac3501fc4b01b630e1848cbe964",
+                "parameters": [
+                    {
+                        "name": "countryId",
+                        "in": "path",
+                        "description": "ID of country that needs to be listed",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        },
+        "/countries/cities/{countryId}": {
+            "get": {
+                "tags": [
+                    "Countries"
+                ],
+                "summary": "CountriesApi show",
+                "operationId": "1fe57d666475a8afacb0138d069c0876",
+                "parameters": [
+                    {
+                        "name": "countryId",
+                        "in": "path",
+                        "description": "ID of a country to show assign cities",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        }
+    },
+    "security": [
+        []
+    ]
+}
